@@ -1,24 +1,38 @@
 import React from 'react'; //import react's library  
 import './Card.css'; //import the style sheet of the element created.
 
-const Card = () => {
+
+const Card = ({id, name, by, gender, height, home, specie}) => {
+
   return (
-    <a class="db center mw5 tc black link dim"
-      title="Frank Ocean's Blonde on Apple Music"
-      href="https://geo.itunes.apple.com/us/album/blonde/id1146195596?at=1l3vqFJ&mt=1&app=music">
+    <div class="db center mw5 tc black link dim dib pa3 ma2 grow bw2 shadow-5">
 
         <img class="db ba b--black-10"
-          alt="Frank Ocean Blonde Album Cover"
-          src="https://s3-us-west-1.amazonaws.com/tachyonsio/img/Blonde-Frank_Ocean.jpeg"/>
-      
+          alt={name}
+          src={`https://robohash.org/${name}?size=200x200`}/>
+          
         <dl class="mt2 f6 lh-copy">
-          <dt class="clip">Title</dt>
-          <dd class="ml0">Blonde</dd>
-          <dt class="clip">Artist</dt>
-          <dd class="ml0 gray">Frank Ocean</dd>
+
+          <dt class="clip">Name</dt>
+          <dd class="ml0 b">{name}</dd>
+
+          <dt class="clip">Birth year</dt>
+          <dd class="ml0 gray">Birth year: {by}</dd>
+
+          <dt class="clip">Gender</dt>
+          <dd class="ml0 gray">Gender: {gender}</dd>
+
+          <dt class="clip">Height</dt>
+          <dd class="ml0 gray">Height: {height} cm</dd>
+
+          <dt class="clip">Homeworld</dt>
+          <dd class="ml0 gray">Homeworld: {home}</dd>
+
+          <dt class="clip">Specie</dt>
+          <dd class="ml0 gray">Specie: {specie}</dd>
         </dl>
-    </a>
-  );
+    </div>
+  )
 }
 
 export default Card;
